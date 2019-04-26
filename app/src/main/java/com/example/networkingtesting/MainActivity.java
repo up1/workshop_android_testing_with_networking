@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView textView = findViewById(R.id.followers);
 
+        // TODO : Need to change or improve
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.github.com")
                 .addConverterFactory(MoshiConverterFactory.create())
