@@ -1,11 +1,13 @@
 package com.example.networkingtesting;
 
+import android.support.test.InstrumentationRegistry;
 import android.support.test.espresso.IdlingRegistry;
 import android.support.test.espresso.IdlingResource;
 import android.support.test.rule.ActivityTestRule;
 
 import com.jakewharton.espresso.OkHttp3IdlingResource;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -20,15 +22,11 @@ public class MainActivityUITest {
     public ActivityTestRule<MainActivity> activityTestRule =
             new ActivityTestRule<>(MainActivity.class);
 
-    @Test
-    public void success_with_realAPI() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        onView(withId(R.id.followers))
-                .check(matches(withText("up1: 468")));
+    @Before
+    public void setBaseUrl() {
+        TestDemoApplication app = (TestDemoApplication)
+                InstrumentationRegistry.getTargetContext().getApplicationContext();
+        app.setBaseUrl("TODO");
     }
 
     @Test
