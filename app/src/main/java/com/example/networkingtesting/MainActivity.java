@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Working with Application
         DemoApplication application = (DemoApplication) getApplication();
+        System.out.println("===>" + application.getBaseUrl());
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(application.getBaseUrl())
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
+                t.printStackTrace();
                 textView.setText(t.getClass().getSimpleName());
             }
         });

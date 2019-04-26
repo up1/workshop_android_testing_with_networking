@@ -8,7 +8,8 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.example.networkingtesting.CustomTestRunner"
     }
     buildTypes {
         release {
@@ -32,4 +33,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-moshi:2.5.0'
     implementation 'com.squareup.okhttp3:okhttp:3.8.1'
+
+    testImplementation 'com.squareup.okhttp3:mockwebserver:3.8.1'
+    androidTestImplementation 'com.squareup.okhttp3:mockwebserver:3.8.1'
 }
